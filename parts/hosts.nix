@@ -1,4 +1,4 @@
-{ inputs, flakeDirectory, ... }:
+{ inputs, flakeDirectory, lib, ... }:
 {
   imports = [ inputs.easy-hosts.flakeModule ];
 
@@ -10,6 +10,14 @@
         class = "darwin";
         arch = "aarch64";
       };
+    };
+
+    perClass = class: {
+      modules = lib.mkMerge [
+        (lib.optionals (class == "darwin") [
+          inputs.homebrew.darwinModules.nix-homebrew
+        ])
+      ];
     };
   };
 }

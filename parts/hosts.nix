@@ -1,4 +1,10 @@
-{ inputs, flakeDirectory, lib, ... }:
+{ inputs, flakeDirectory, ... }:
+let
+  perClassModules = {
+    nixos = [];
+    darwin = [ inputs.homebrew.darwinModules.nix-homebrew ];
+  };
+in
 {
   imports = [ inputs.easy-hosts.flakeModule ];
 
@@ -12,12 +18,12 @@
       };
     };
 
+    shared.modules = [
+      inputs.lix.nixosModules.default
+    ];
+
     perClass = class: {
-      modules = lib.mkMerge [
-        (lib.optionals (class == "darwin") [
-          inputs.homebrew.darwinModules.nix-homebrew
-        ])
-      ];
+      modules = perClassModules.${class};
     };
   };
 }

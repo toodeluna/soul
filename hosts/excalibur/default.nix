@@ -5,7 +5,7 @@
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
-    "pipe-operators"
+    "pipe-operator"
   ];
 
   programs.zsh.enable = true;

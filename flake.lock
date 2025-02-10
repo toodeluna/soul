@@ -1,5 +1,40 @@
 {
   "nodes": {
+    "darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1739034224,
+        "narHash": "sha256-Mj/8jDzh1KNmUhWqEeVlW3hO9MZkxqioJGnmR7rivaE=",
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "rev": "0b6f96a6b9efcfa8d3cc8023008bcbcd1b9bc1a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
+    "easy-hosts": {
+      "locked": {
+        "lastModified": 1738500011,
+        "narHash": "sha256-tpYwro3iLCVWbKSIs2P4DAlA1hRs4XLgZYL2v8Bdjg4=",
+        "owner": "tgirlcloud",
+        "repo": "easy-hosts",
+        "rev": "5f1824597e4db164a5b7d3feb3a3c7d0a01d5699",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tgirlcloud",
+        "repo": "easy-hosts",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -48,6 +83,8 @@
     },
     "root": {
       "inputs": {
+        "darwin": "darwin",
+        "easy-hosts": "easy-hosts",
         "flake-parts": "flake-parts",
         "nixpkgs": "nixpkgs",
         "treefmt": "treefmt"

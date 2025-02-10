@@ -1,4 +1,5 @@
+{ lib, ... }:
 {
   systems = [ "aarch64-darwin" ];
-  imports = [ ./treefmt.nix ];
+  imports = lib.soul.files.collectModuleImports ./.;
 }

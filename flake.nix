@@ -11,5 +11,11 @@
     };
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } ./parts;
+  outputs =
+    inputs:
+    let
+      lib = inputs.nixpkgs.lib.extend (final: prev: { soul = import ./lib prev; });
+      specialArgs = { inherit lib; };
+    in
+    inputs.flake-parts.lib.mkFlake { inherit inputs specialArgs; } ./parts;
 }

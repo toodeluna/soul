@@ -1,5 +1,5 @@
-{ lib, ... }:
+{ inputs, lib, ... }:
 {
-  systems = [ "aarch64-darwin" ];
+  systems = import inputs.systems;
   imports = lib.soul.files.collectModuleImports ./.;
 }

@@ -6,20 +6,9 @@
 }:
 {
   services.nix-daemon.enable = true;
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-    "pipe-operator"
-  ];
 
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
-
-  system = {
-    stateVersion = 6;
-    configurationRevision = self.rev or self.dirtRev or null;
-  };
 
   users = {
     knownUsers = [ "luna" ];

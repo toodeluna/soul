@@ -1,8 +1,17 @@
-{ inputs, flakeDirectory, ... }:
+{
+  inputs,
+  modules,
+  flakeDirectory,
+  ...
+}:
 let
   perClassModules = {
     nixos = [ ];
-    darwin = [ inputs.homebrew.darwinModules.nix-homebrew ];
+
+    darwin = [
+      inputs.homebrew.darwinModules.nix-homebrew
+      modules.darwin
+    ];
   };
 in
 {
@@ -20,6 +29,7 @@ in
 
     shared.modules = [
       inputs.lix.nixosModules.default
+      modules.shared
     ];
 
     perClass = class: {

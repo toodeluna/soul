@@ -48,7 +48,8 @@
     let
       lib = inputs.nixpkgs.lib.extend (final: prev: { soul = import ./lib prev; });
       flakeDirectory = ./.;
-      specialArgs = { inherit lib flakeDirectory; };
+      modules = import ./modules;
+      specialArgs = { inherit lib flakeDirectory modules; };
     in
     inputs.flake-parts.lib.mkFlake { inherit inputs specialArgs; } ./parts;
 }

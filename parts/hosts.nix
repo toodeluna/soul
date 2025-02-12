@@ -17,15 +17,9 @@ in
 {
   imports = [ inputs.easy-hosts.flakeModule ];
 
-  easyHosts = {
+  easyHosts = rec {
     path = flakeDirectory + "/hosts";
-
-    hosts = {
-      excalibur = {
-        class = "darwin";
-        arch = "aarch64";
-      };
-    };
+    hosts = import path;
 
     shared.modules = [
       inputs.lix.nixosModules.default

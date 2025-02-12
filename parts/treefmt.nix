@@ -7,6 +7,8 @@
 
     settings.global.excludes = [
       ".gitattributes"
+      ".github/*"
+      "justfile"
       "flake.lock"
     ];
 

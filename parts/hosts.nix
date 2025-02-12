@@ -1,7 +1,7 @@
 { inputs, flakeDirectory, ... }:
 let
   perClassModules = {
-    nixos = [];
+    nixos = [ ];
     darwin = [ inputs.homebrew.darwinModules.nix-homebrew ];
   };
 in

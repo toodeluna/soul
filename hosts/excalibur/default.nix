@@ -1,4 +1,9 @@
-{ self, inputs, pkgs, ... }:
+{
+  self,
+  inputs,
+  pkgs,
+  ...
+}:
 {
   services.nix-daemon.enable = true;
   nixpkgs.config.allowUnfree = true;

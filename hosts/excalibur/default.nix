@@ -62,5 +62,6 @@
     lazygit
     vscode
     discord
+    just
   ];
 }

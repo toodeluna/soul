@@ -5,19 +5,18 @@
   ...
 }:
 {
-  services.nix-daemon.enable = true;
+  soul = {
+    users.me = {
+      shortName = "luna";
+      fullName = "Luna Heyman";
+    };
 
-  programs.zsh.enable = true;
-  environment.shells = [ pkgs.zsh ];
+    defaults = {
+      shell = "zsh";
+    };
 
-  users = {
-    knownUsers = [ "luna" ];
-
-    users.luna = {
-      uid = 501;
-      description = "Luna Heyman";
-      shell = pkgs.zsh;
-      home = "/Users/luna";
+    shells = {
+      zsh.enable = true;
     };
   };
 

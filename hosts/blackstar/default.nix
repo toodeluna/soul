@@ -9,7 +9,10 @@ in
   ];
 
   soul = {
-    system.name = "blackstar";
+    system = {
+      name = "blackstar";
+      flake = "/home/luna/github/toodeluna/soul";
+    };
 
     users.me = {
       shortName = "luna";

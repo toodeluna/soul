@@ -6,7 +6,9 @@
 }:
 let
   perClassModules = {
-    nixos = [ ];
+    nixos = [
+      inputs.disko.nixosModules.disko
+    ];
 
     darwin = [
       inputs.homebrew.darwinModules.nix-homebrew
@@ -22,7 +24,7 @@ in
     hosts = import path;
 
     shared.modules = [
-      inputs.lix.nixosModules.default
+      # inputs.lix.nixosModules.default
       modules.shared
     ];
 

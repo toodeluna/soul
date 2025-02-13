@@ -25,7 +25,6 @@
     "zen-browser"
     "microsoft-teams"
   ];
-  
 
   environment.systemPackages = with pkgs; [
     git

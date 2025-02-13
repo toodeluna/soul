@@ -26,5 +26,6 @@ in
     uid = 501;
     description = cfg.fullName;
     home = "/${lib.soul.systems.ternary pkgs "home" "Users"}/${cfg.shortName}";
+    createHome = true;
   };
 }

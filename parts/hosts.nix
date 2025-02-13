@@ -8,6 +8,7 @@ let
   perClassModules = {
     nixos = [
       inputs.disko.nixosModules.disko
+      modules.nixos
     ];
 
     darwin = [

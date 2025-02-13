@@ -1,11 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, flakeDirectory, ... }:
+let
+  publicKeys = import (flakeDirectory + "/data/public-keys.nix");
+in
 {
   imports = [
     ./disks.nix
     ./hardware.nix
   ];
-
-  services.openssh.enable = true;
 
   soul = {
     system.name = "blackstar";
@@ -14,18 +15,11 @@
       shortName = "luna";
       fullName = "Luna Heyman";
     };
-  };
 
-  users.users.root = {
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIxCvGO9OqARsPJl/bKRumMHC/zFgRyFLEVQrru/z7qr luna@excalibur"
-    ];
-  };
-
-  users.users.luna = {
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIxCvGO9OqARsPJl/bKRumMHC/zFgRyFLEVQrru/z7qr luna@excalibur"
-    ];
+    ssh = {
+      enable = true;
+      keys = [ publicKeys.excalibur.luna ];
+    };
   };
 
   environment.systemPackages = with pkgs; [

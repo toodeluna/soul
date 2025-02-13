@@ -1,2 +1,5 @@
+# Nix ouput files
+result
+
 # System files
 .DS_Store

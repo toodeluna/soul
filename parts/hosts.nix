@@ -24,7 +24,6 @@ in
     hosts = import path;
 
     shared.modules = [
-      # inputs.lix.nixosModules.default
       modules.shared
     ];
 

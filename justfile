@@ -58,6 +58,18 @@ alias help := default
 @rebuild-as hostname:
 	darwin-rebuild switch --flake .#{{ hostname }}
 
+# Rebuild the current system based on the current hostname.
+[group('Systems')]
+[linux]
+@rebuild:
+	nh os switch .
+
+# Rebuild the current system based on the specified hostname.
+[group('Systems')]
+[linux]
+@rebuild-as hostname:
+	nh os switch . -H {{ hostname }}
+
 # Edit the specified secret or add it if it doesn't exist.
 [group('Secrets')]
 [working-directory: 'secrets']

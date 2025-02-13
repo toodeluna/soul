@@ -57,3 +57,21 @@ alias help := default
 [macos]
 @rebuild-as hostname:
 	darwin-rebuild switch --flake .#{{ hostname }}
+
+# Edit the specified secret or add it if it doesn't exist.
+[group('Secrets')]
+[working-directory: 'secrets']
+@edit-secret name:
+	agenix -e {{ name }}.age
+
+# Rekey all the secrets.
+[group('Secrets')]
+[working-directory: 'secrets']
+@rekey-secrets:
+	agenix -r
+
+# Show the contents of the specified secret.
+[group('Secrets')]
+[working-directory: 'secrets']
+@decrypt-secret name:
+	agenix -d {{ name }}.age

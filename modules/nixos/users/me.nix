@@ -13,6 +13,10 @@ in
 
   config.users.users = {
     root.hashedPassword = cfg.password;
-    ${cfg.shortName}.hashedPassword = cfg.password;
+
+    ${cfg.shortName} = {
+      hashedPassword = cfg.password;
+      isNormalUser = true;
+    };
   };
 }

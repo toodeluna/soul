@@ -7,7 +7,7 @@ let
     # Type
 
     ```
-    ternary :: attrset -> any -> any -> any
+    ternary :: AttrSet -> Any -> Any -> Any
     ```
 
     # Example

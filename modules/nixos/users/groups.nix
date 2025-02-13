@@ -4,7 +4,7 @@ let
 in
 {
   users = {
-    groups.${username} = {};
+    groups.${username} = { };
 
     users.${username} = {
       group = username;

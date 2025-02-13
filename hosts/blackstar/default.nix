@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  imports = [ ./disks.nix ./hardware.nix ];
+  imports = [
+    ./disks.nix
+    ./hardware.nix
+  ];
 
   services.openssh.enable = true;
 

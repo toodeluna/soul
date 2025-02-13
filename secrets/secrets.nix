@@ -4,4 +4,10 @@ with import ../data/public-keys.nix;
     blackstar.luna
     blackstar.root
   ];
+
+  "porkbun-credentials.age".publicKeys = [
+    blackstar.luna
+    blackstar.root
+    excalibur.luna
+  ];
 }

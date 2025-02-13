@@ -8,11 +8,13 @@ let
   perClassModules = {
     nixos = [
       inputs.disko.nixosModules.disko
+      inputs.agenix.nixosModules.age
       modules.nixos
     ];
 
     darwin = [
       inputs.homebrew.darwinModules.nix-homebrew
+      inputs.agenix.darwinModules.age
       modules.darwin
     ];
   };
@@ -24,9 +26,10 @@ in
     path = flakeDirectory + "/hosts";
     hosts = import path;
 
-    shared.modules = [
-      modules.shared
-    ];
+    shared = {
+      modules = [ modules.shared ];
+      specialArgs = { inherit flakeDirectory; };
+    };
 
     perClass = class: {
       modules = perClassModules.${class};

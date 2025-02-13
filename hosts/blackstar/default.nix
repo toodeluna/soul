@@ -10,7 +10,6 @@
     users.me = {
       shortName = "luna";
       fullName = "Luna Heyman";
-      password = "$y$j9T$mRU04ULTVP3VcjRv6w0Mh/$FHBN/V5MRcirNQx9pLpI.ISk7GSCbFWEedOoyRdoCz5";
     };
   };
 

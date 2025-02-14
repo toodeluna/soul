@@ -9,12 +9,14 @@ let
     nixos = [
       inputs.disko.nixosModules.disko
       inputs.agenix.nixosModules.age
+      inputs.home-manager.nixosModules.home-manager
       modules.nixos
     ];
 
     darwin = [
       inputs.homebrew.darwinModules.nix-homebrew
       inputs.agenix.darwinModules.age
+      inputs.home-manager.darwinModules.home-manager
       modules.darwin
     ];
   };
@@ -28,7 +30,7 @@ in
 
     shared = {
       modules = [ modules.shared ];
-      specialArgs = { inherit flakeDirectory; };
+      specialArgs = { inherit flakeDirectory modules; };
     };
 
     perClass = class: {

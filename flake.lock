@@ -156,6 +156,26 @@
         "type": "github"
       }
     },
+    "home-manager_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1739470101,
+        "narHash": "sha256-NxNe32VB4XI/xIXrsKmIfrcgtEx5r/5s52pL3CpEcA4=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "5031c6d2978109336637977c165f82aa49fa16a7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "homebrew": {
       "inputs": {
         "brew-src": "brew-src",
@@ -292,6 +312,7 @@
         "disko": "disko",
         "easy-hosts": "easy-hosts",
         "flake-parts": "flake-parts",
+        "home-manager": "home-manager_2",
         "homebrew": "homebrew",
         "homebrew-bundle": "homebrew-bundle",
         "homebrew-cask": "homebrew-cask",

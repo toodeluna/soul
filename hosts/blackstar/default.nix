@@ -31,12 +31,13 @@ in
     };
 
     networking = {
+      ssl.enable = true;
+      nginx.enable = true;
+
       openPorts = [
         80
         443
       ];
-      ssl.enable = true;
-      nginx.enable = true;
     };
   };
 

@@ -1,11 +1,11 @@
 {
   pkgs,
-  flakeDirectory,
+  self,
   config,
   ...
 }:
 let
-  publicKeys = import (flakeDirectory + "/data/public-keys.nix");
+  publicKeys = import (self + "/data/public-keys.nix");
 in
 {
   imports = [

@@ -1,9 +1,4 @@
-{
-  inputs,
-  modules,
-  flakeDirectory,
-  ...
-}:
+{ inputs, modules, ... }:
 let
   perClassModules = {
     nixos = [
@@ -25,12 +20,12 @@ in
   imports = [ inputs.easy-hosts.flakeModule ];
 
   easyHosts = rec {
-    path = flakeDirectory + "/hosts";
+    path = ../hosts;
     hosts = import path;
 
     shared = {
       modules = [ modules.shared ];
-      specialArgs = { inherit flakeDirectory modules; };
+      specialArgs = { inherit modules; };
     };
 
     perClass = class: {

@@ -1,9 +1,4 @@
-{
-  lib,
-  config,
-  flakeDirectory,
-  ...
-}:
+{ lib, config, ... }:
 let
   cfg = config.soul.networking.ssl;
   email = config.soul.users.me.email;
@@ -14,7 +9,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    age.secrets.porkbun-credentials.file = flakeDirectory + "/secrets/porkbun-credentials.age";
+    age.secrets.porkbun-credentials.file = self + "/secrets/porkbun-credentials.age";
 
     security.acme = lib.mkIf cfg.enable {
       acceptTerms = true;

@@ -6,6 +6,8 @@
 }:
 {
   soul = {
+    fonts.enable = true;
+
     users.me = {
       shortName = "luna";
       fullName = "Luna Heyman";

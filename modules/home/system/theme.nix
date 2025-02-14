@@ -1,4 +1,9 @@
-{ self, lib, systemConfiguration, ... }:
+{
+  self,
+  lib,
+  systemConfiguration,
+  ...
+}:
 let
   cfg = systemConfiguration.soul.system.theme;
 in

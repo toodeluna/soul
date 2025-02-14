@@ -1,4 +1,9 @@
-{ self, config, inputs, ... }:
+{
+  self,
+  config,
+  inputs,
+  ...
+}:
 let
   username = config.soul.users.me.shortName;
 in

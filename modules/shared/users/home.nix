@@ -1,4 +1,4 @@
-{ config, modules, ... }:
+{ self, config, modules, ... }:
 let
   username = config.soul.users.me.shortName;
 in
@@ -8,6 +8,7 @@ in
     useUserPackages = true;
 
     extraSpecialArgs = {
+      inherit self;
       systemConfiguration = config;
     };
 

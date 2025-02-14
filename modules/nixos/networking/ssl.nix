@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ self, lib, config, ... }:
 let
   cfg = config.soul.networking.ssl;
   email = config.soul.users.me.email;

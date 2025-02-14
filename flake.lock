@@ -40,6 +40,27 @@
         "type": "github"
       }
     },
+    "catppuccin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1739367339,
+        "narHash": "sha256-aFtxv+qqOvM+MKRenwvPtOTdM5g4ITp06dbOlPyncQc=",
+        "owner": "toodeluna",
+        "repo": "catppuccin-nix",
+        "rev": "732a00f668d734a4bca47fe5499a91a0ea4b2514",
+        "type": "github"
+      },
+      "original": {
+        "owner": "toodeluna",
+        "ref": "feat/neovim-custom-settings",
+        "repo": "catppuccin-nix",
+        "type": "github"
+      }
+    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -308,6 +329,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "catppuccin": "catppuccin",
         "darwin": "darwin_2",
         "disko": "disko",
         "easy-hosts": "easy-hosts",

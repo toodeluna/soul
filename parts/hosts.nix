@@ -5,6 +5,7 @@ let
       inputs.disko.nixosModules.disko
       inputs.agenix.nixosModules.age
       inputs.home-manager.nixosModules.home-manager
+      inputs.catppuccin.nixosModules.catppuccin
       self.nixosModules.default
     ];
 

@@ -1,4 +1,4 @@
-{ self, config, ... }:
+{ self, config, inputs, ... }:
 let
   username = config.soul.users.me.shortName;
 in
@@ -13,6 +13,7 @@ in
     };
 
     users.${username}.imports = [
+      inputs.catppuccin.homeManagerModules.catppuccin
       self.homeManagerModules.default
     ];
   };

@@ -17,6 +17,7 @@ in
     system = {
       name = "blackstar";
       flake = "/home/luna/github/toodeluna/soul";
+      theme.enable = true;
     };
 
     users.me = {

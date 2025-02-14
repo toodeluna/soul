@@ -1,4 +1,9 @@
-{ pkgs, flakeDirectory, config, ... }:
+{
+  pkgs,
+  flakeDirectory,
+  config,
+  ...
+}:
 let
   publicKeys = import (flakeDirectory + "/data/public-keys.nix");
 in
@@ -26,7 +31,10 @@ in
     };
 
     networking = {
-      openPorts = [ 80 443 ];
+      openPorts = [
+        80
+        443
+      ];
       ssl.enable = true;
       nginx.enable = true;
     };

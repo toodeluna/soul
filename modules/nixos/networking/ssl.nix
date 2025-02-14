@@ -1,4 +1,9 @@
-{ lib, config, flakeDirectory, ... }:
+{
+  lib,
+  config,
+  flakeDirectory,
+  ...
+}:
 let
   cfg = config.soul.networking.ssl;
   email = config.soul.users.me.email;

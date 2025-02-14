@@ -7,10 +7,11 @@
 
     settings.global.excludes = [
       ".gitattributes"
-      ".github/*"
       "*.age"
       "justfile"
       "flake.lock"
+      "CODEOWNERS"
+      "LICENSE"
     ];
 
     programs = {

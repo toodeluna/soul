@@ -1,4 +1,5 @@
 alias help := default
+alias fmt := format
 
 # List all the available recipes.
 @default:

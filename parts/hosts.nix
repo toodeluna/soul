@@ -1,18 +1,18 @@
-{ inputs, modules, ... }:
+{ self, inputs, ... }:
 let
   perClassModules = {
     nixos = [
       inputs.disko.nixosModules.disko
       inputs.agenix.nixosModules.age
       inputs.home-manager.nixosModules.home-manager
-      modules.nixos
+      self.nixosModules.default
     ];
 
     darwin = [
       inputs.homebrew.darwinModules.nix-homebrew
       inputs.agenix.darwinModules.age
       inputs.home-manager.darwinModules.home-manager
-      modules.darwin
+      self.darwinModules.default
     ];
   };
 in
@@ -24,8 +24,7 @@ in
     hosts = import path;
 
     shared = {
-      modules = [ modules.shared ];
-      specialArgs = { inherit modules; };
+      modules = [ self.sharedModules.default ];
     };
 
     perClass = class: {

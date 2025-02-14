@@ -1,9 +1,4 @@
-{
-  self,
-  config,
-  modules,
-  ...
-}:
+{ self, config, ... }:
 let
   username = config.soul.users.me.shortName;
 in
@@ -18,7 +13,7 @@ in
     };
 
     users.${username}.imports = [
-      modules.home
+      self.homeManagerModules.default
     ];
   };
 }

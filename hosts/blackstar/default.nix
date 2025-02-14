@@ -17,39 +17,31 @@ in
     users.me = {
       shortName = "luna";
       fullName = "Luna Heyman";
+      email = "luna.heyman@proton.me";
     };
 
     ssh = {
       enable = true;
       keys = [ publicKeys.excalibur.luna ];
     };
-  };
 
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
-
-  services.nginx = {
-    enable = true;
-    recommendedProxySettings = true;
-    recommendedTlsSettings = true;
-
-    virtualHosts."toodeluna.gay" = {
-      addSSL = true;
-      enableACME = true;
-      root = "/var/www/tempsite";
+    networking = {
+      openPorts = [ 80 443 ];
+      ssl.enable = true;
+      nginx.enable = true;
     };
   };
 
-  age.secrets.porkbun-credentials.file = flakeDirectory + "/secrets/porkbun-credentials.age";
+  services.nginx.virtualHosts."toodeluna.gay" = {
+    addSSL = true;
+    enableACME = true;
+    root = "/var/www/tempsite";
+  };
 
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "luna.heyman@proton.me";
-
-    certs."toodeluna.gay" = {
-      dnsProvider = "porkbun";
-      webroot = null;
-      environmentFile = config.age.secrets.porkbun-credentials.path;
-    };
+  security.acme.certs."toodeluna.gay" = {
+    dnsProvider = "porkbun";
+    webroot = null;
+    environmentFile = config.age.secrets.porkbun-credentials.path;
   };
 
   environment.systemPackages = with pkgs; [

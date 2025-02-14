@@ -9,6 +9,7 @@
     users.me = {
       shortName = "luna";
       fullName = "Luna Heyman";
+      email = "luna.heyman@proton.me";
     };
 
     defaults = {

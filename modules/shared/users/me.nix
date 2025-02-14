@@ -20,6 +20,12 @@ in
       example = "Luna Heyman";
       type = lib.types.str;
     };
+
+    email = lib.mkOption {
+      description = "Your email address.";
+      example = "contact@toodeluna.gay";
+      type = lib.types.str;
+    };
   };
 
   config.users.users.${cfg.shortName} = {

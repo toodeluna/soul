@@ -1,14 +1,22 @@
 { self, systemConfiguration, ... }:
 let
   user = systemConfiguration.soul.users.me;
-  gitConfig = import (self + "/data/git-config.nix");
 in
 {
   programs.git = {
-    inherit (gitConfig) aliases;
     enable = true;
     userName = user.fullName;
     userEmail = user.email;
-    extraConfig = gitConfig.config;
+
+    aliases = {
+      lga = "log --all --decorate --graph --oneline";
+      put = "push --set-upstream";
+    };
+
+    extraConfig = {
+      init.defaultBranch = "main";
+      core.ignorecase = false;
+      pull.rebase = true;
+    };
   };
 }

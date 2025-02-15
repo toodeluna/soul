@@ -7,6 +7,7 @@
 {
   soul = {
     fonts.enable = true;
+    system.theme.enable = true;
 
     users.me = {
       shortName = "luna";
@@ -27,6 +28,7 @@
     "ghostty"
     "zen-browser"
     "microsoft-teams"
+    "stremio"
   ];
 
   environment.systemPackages = with pkgs; [

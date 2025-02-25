@@ -51,3 +51,10 @@ alias fmt := format
 [macos]
 @provision hostname='':
     nix run nix-darwin/master#darwin-rebuild -- switch --flake {{ if hostname != "" { ".#" + hostname } else { "." } }}
+
+# Garbage collect and optimize the Nix store.
+[group('System')]
+[macos]
+@optimize:
+    nix-collect-garbage --delete-old
+    nix store optimise

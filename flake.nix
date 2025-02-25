@@ -12,26 +12,5 @@
     };
   };
 
-  outputs =
-    inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ inputs.treefmt.flakeModule ];
-
-      systems = import inputs.systems;
-
-      perSystem.treefmt = {
-        projectRootFile = "flake.nix";
-
-        programs = {
-          nixfmt.enable = true;
-          prettier.enable = true;
-        };
-
-        settings.global.excludes = [
-          "LICENSE"
-          "CODEOWNERS"
-          ".gitattributes"
-        ];
-      };
-    };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } ./modules/flake;
 }

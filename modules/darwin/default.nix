@@ -4,5 +4,6 @@
     ./system
     ./security
     ./preferences
+    ./users
   ];
 }

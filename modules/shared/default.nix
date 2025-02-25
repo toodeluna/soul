@@ -3,5 +3,6 @@
     ./system
     ./input
     ./security
+    ./users
   ];
 }

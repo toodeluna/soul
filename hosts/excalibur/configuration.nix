@@ -8,21 +8,15 @@
 {
   custom = {
     input.fingerprint.enable = true;
+
+    users.profile = {
+      name = "Luna Heyman";
+      username = "luna";
+    };
   };
 
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
-
-  users = {
-    knownUsers = [ "luna" ];
-
-    users.luna = {
-      uid = 501;
-      createHome = true;
-      description = "Luna Heyman";
-      home = "/Users/luna";
-    };
-  };
 
   nix-homebrew = {
     enable = true;

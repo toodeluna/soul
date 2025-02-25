@@ -1,10 +1,9 @@
-{ self, inputs, ... }:
-let
-  perClassModules = {
-    nixos = [ ];
-    darwin = [ inputs.homebrew.darwinModules.nix-homebrew ];
-  };
-in
+{
+  self,
+  inputs,
+  lib,
+  ...
+}:
 {
   imports = [ inputs.easy-hosts.flakeModule ];
 
@@ -19,7 +18,13 @@ in
     };
 
     perClass = class: {
-      modules = perClassModules.${class};
+      modules = lib.mkMerge [
+        (lib.optionals (class == "nixos") [ ])
+
+        (lib.optionals (class == "darwin") [
+          inputs.homebrew.darwinModules.nix-homebrew
+        ])
+      ];
     };
   };
 }

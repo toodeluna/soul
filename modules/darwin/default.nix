@@ -5,5 +5,6 @@
     ./security
     ./preferences
     ./users
+    ./brew
   ];
 }

@@ -19,9 +19,12 @@
 
     perClass = class: {
       modules = lib.mkMerge [
+        [ (self + "/modules/shared") ]
+
         (lib.optionals (class == "nixos") [ ])
 
         (lib.optionals (class == "darwin") [
+          (self + "/modules/darwin")
           inputs.homebrew.darwinModules.nix-homebrew
         ])
       ];

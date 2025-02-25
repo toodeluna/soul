@@ -6,78 +6,12 @@
   ...
 }:
 {
+  custom = {
+    input.fingerprint.enable = true;
+  };
+
   programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
-
-  system = {
-    stateVersion = 6;
-    configurationRevision = self.rev or self.dirtRev or null;
-    activationScripts.postUserActivation.text = "/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u";
-
-    keyboard = {
-      enableKeyMapping = true;
-      remapCapsLockToEscape = true;
-    };
-
-    defaults = {
-      LaunchServices.LSQuarantine = false;
-
-      dock = {
-        orientation = "left";
-        autohide = true;
-        autohide-delay = 0.0;
-        autohide-time-modifier = 1.0;
-        static-only = false;
-        show-recents = false;
-        showhidden = false;
-        mru-spaces = false;
-      };
-
-      trackpad = {
-        Clicking = true;
-        TrackpadRightClick = true;
-      };
-
-      NSGlobalDomain = {
-        KeyRepeat = 3;
-        InitialKeyRepeat = 15;
-        AppleInterfaceStyle = "Dark";
-        AppleMeasurementUnits = "Centimeters";
-        AppleTemperatureUnit = "Celsius";
-        NSAutomaticCapitalizationEnabled = false;
-        NSAutomaticDashSubstitutionEnabled = false;
-        NSAutomaticPeriodSubstitutionEnabled = false;
-        NSAutomaticQuoteSubstitutionEnabled = false;
-        NSAutomaticSpellingCorrectionEnabled = false;
-      };
-    };
-  };
-
-  nix = {
-    channel.enable = false;
-    optimise.automatic = true;
-    gc.automatic = true;
-
-    settings = {
-      keep-going = true;
-      warn-dirty = false;
-      use-xdg-base-directories = true;
-
-      allowed-users = [ "@admin" ];
-      trusted-users = [ "@admin" ];
-
-      experimental-features = [
-        "nix-command"
-        "flakes"
-        "pipe-operators"
-      ];
-    };
-  };
-
-  security = {
-    pam.services.sudo_local.touchIdAuth = true;
-    sudo.extraConfig = "Defaults env_reset,pwfeedback";
-  };
 
   users = {
     knownUsers = [ "luna" ];
@@ -119,11 +53,6 @@
       "zen-browser"
       "microsoft-teams"
     ];
-  };
-
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowAliases = false;
   };
 
   environment.systemPackages = with pkgs; [

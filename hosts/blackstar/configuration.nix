@@ -26,7 +26,7 @@ in
 
       ports = [
         80
-        433
+        443
       ];
     };
 
@@ -39,11 +39,5 @@ in
     addSSL = true;
     enableACME = true;
     root = "/var/www/tempsite";
-  };
-
-  security.acme.certs."toodeluna.gay" = {
-    dnsProvider = "porkbun";
-    webroot = null;
-    environmentFile = config.age.secrets.porkbun-credentials.path;
   };
 }

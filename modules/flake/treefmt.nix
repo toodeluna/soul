@@ -15,6 +15,7 @@
       "LICENSE"
       "CODEOWNERS"
       ".gitattributes"
+      "*.age"
     ];
   };
 }

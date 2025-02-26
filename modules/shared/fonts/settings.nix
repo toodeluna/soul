@@ -1,23 +1,30 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
-  mkFontOption = name: default: lib.mkOption {
-    inherit default;
-    description = "The font to use for '${name}'.";
+  mkFontOption =
+    name: default:
+    lib.mkOption {
+      inherit default;
+      description = "The font to use for '${name}'.";
 
-    type = lib.types.submodule {
-      options = {
-        package = lib.mkOption {
-          description = "The font package.";
-          type = lib.types.package;
-        };
+      type = lib.types.submodule {
+        options = {
+          package = lib.mkOption {
+            description = "The font package.";
+            type = lib.types.package;
+          };
 
-        name = lib.mkOption {
-          description = "The name of the font.";
-          type = lib.types.str;
+          name = lib.mkOption {
+            description = "The name of the font.";
+            type = lib.types.str;
+          };
         };
       };
     };
-  };
 in
 {
   options.custom.fonts.settings = {
@@ -32,8 +39,10 @@ in
     };
   };
 
-  config.fonts.packages = with config.custom.fonts.settings; lib.mkIf config.custom.fonts.enable [
-    monospace.package
-    nerd.package
-  ];
+  config.fonts.packages =
+    with config.custom.fonts.settings;
+    lib.mkIf config.custom.fonts.enable [
+      monospace.package
+      nerd.package
+    ];
 }

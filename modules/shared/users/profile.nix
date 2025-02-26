@@ -12,6 +12,12 @@
       description = "The main user's full name.";
       example = "Luna Heyman";
     };
+
+    email = lib.mkOption {
+      type = lib.types.str;
+      description = "The main user's email address.";
+      example = "contact@toodeluna.gay";
+    };
   };
 
   config.users.users.profile = {

@@ -4,5 +4,6 @@
 
   age.secrets = {
     password.file = "${self}/secrets/password.age";
+    porkbun-credentials.file = "${self}/secrets/porkbun-credentials.age";
   };
 }

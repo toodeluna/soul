@@ -8,6 +8,7 @@
     users.profile = {
       name = "Luna Heyman";
       username = "luna";
+      email = "luna.heyman@proton.me";
       shell = "zsh";
     };
 

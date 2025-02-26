@@ -3,5 +3,6 @@
     ./boot
     ./users
     ./ssh
+    ./networking
   ];
 }

@@ -58,3 +58,21 @@ alias fmt := format
 @optimize:
     nix-collect-garbage --delete-old
     nix store optimise
+
+# Edit the specified secret or add it if it doesn't exist.
+[group('Secrets')]
+[working-directory: 'secrets']
+@edit-secret name:
+    agenix -e {{ name }}.age
+
+# Rekey all the secrets with the new `secrets.nix` file.
+[group('Secrets')]
+[working-directory: 'secrets']
+@rekey-secrets:
+    agenix -r
+
+# Show the contents of the specified secret.
+[group('Secrets')]
+[working-directory: 'secrets']
+@decrypt-secret name:
+    agenix -d {{ name }}.age

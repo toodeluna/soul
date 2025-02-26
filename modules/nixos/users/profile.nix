@@ -11,6 +11,7 @@ in
     users.profile = {
       isNormalUser = true;
       group = username;
+      hashedPasswordFile = config.age.secrets.password.path;
       extraGroups = [ "wheel" ];
     };
   };

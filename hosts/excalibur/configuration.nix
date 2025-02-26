@@ -18,12 +18,10 @@
 
     system.packages = {
       inherit (pkgs)
-        just
         neovim
         vscode
         discord
         raycast
-        speedtest-cli
         ;
     };
 

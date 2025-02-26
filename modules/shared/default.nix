@@ -5,5 +5,6 @@
     ./security
     ./users
     ./shells
+    ./tools
   ];
 }

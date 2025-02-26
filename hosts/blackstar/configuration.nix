@@ -9,6 +9,8 @@ let
 in
 {
   custom = {
+    system.flakePath = "/home/luna/github/toodeluna/flake";
+
     users.profile = {
       name = "Luna Heyman";
       username = "luna";

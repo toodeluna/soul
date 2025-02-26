@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   custom = {
+    system.flakePath = "/Users/luna/GitHub/toodeluna/flake";
     input.fingerprint.enable = true;
     shells.zsh.enable = true;
     fonts.enable = true;

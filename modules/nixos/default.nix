@@ -5,5 +5,6 @@
     ./ssh
     ./networking
     ./system
+    ./tools
   ];
 }

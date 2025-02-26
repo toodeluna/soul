@@ -46,6 +46,12 @@ alias fmt := format
 @rebuild hostname='':
     darwin-rebuild switch --flake {{ if hostname != "" { ".#" + hostname } else { "." } }}
 
+# Rebuild the current system based on the specified hostname or the system's hostname if no hostname is specified.
+[group('System')]
+[linux]
+@rebuild hostname='':
+    nh os switch {{ if hostname != "" { "-H " + hostname } else { "" } }}
+
 # Install nix-darwin and rebuild the current system based on the specified hostname or the system's hostname if no hostname is specified.
 [group('System')]
 [macos]

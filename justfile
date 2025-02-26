@@ -65,6 +65,13 @@ alias fmt := format
     nix-collect-garbage --delete-old
     nix store optimise
 
+# Garbage collect and optimize the Nix store.
+[group('System')]
+[linux]
+@optimize:
+    nh clean all
+    nix store optimise
+
 # Edit the specified secret or add it if it doesn't exist.
 [group('Secrets')]
 [working-directory('secrets')]

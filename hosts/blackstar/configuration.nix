@@ -36,7 +36,7 @@ in
   };
 
   services.nginx.virtualHosts."toodeluna.gay" = {
-    addSSL = true;
+    forceSSL = true;
     enableACME = true;
     root = "/var/www/tempsite";
   };

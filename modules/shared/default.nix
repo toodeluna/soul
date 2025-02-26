@@ -6,5 +6,6 @@
     ./users
     ./shells
     ./tools
+    ./fonts
   ];
 }

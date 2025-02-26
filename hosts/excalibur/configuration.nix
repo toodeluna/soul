@@ -1,14 +1,9 @@
-{
-  self,
-  inputs,
-  pkgs,
-  config,
-  ...
-}:
+{ pkgs, ... }:
 {
   custom = {
     input.fingerprint.enable = true;
     shells.zsh.enable = true;
+    fonts.enable = true;
 
     users.profile = {
       name = "Luna Heyman";
@@ -32,9 +27,4 @@
       "microsoft-teams"
     ];
   };
-
-  fonts.packages = with pkgs; [
-    jetbrains-mono
-    nerd-fonts.jetbrains-mono
-  ];
 }

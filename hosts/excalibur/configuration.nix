@@ -8,15 +8,14 @@
 {
   custom = {
     input.fingerprint.enable = true;
+    shells.zsh.enable = true;
 
     users.profile = {
       name = "Luna Heyman";
       username = "luna";
+      shell = "zsh";
     };
   };
-
-  programs.zsh.enable = true;
-  environment.shells = [ pkgs.zsh ];
 
   homebrew.casks = [
     "stremio"

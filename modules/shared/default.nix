@@ -4,5 +4,6 @@
     ./input
     ./security
     ./users
+    ./shells
   ];
 }

@@ -4,5 +4,6 @@
     ./users
     ./ssh
     ./networking
+    ./system
   ];
 }
